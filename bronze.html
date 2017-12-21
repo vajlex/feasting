@@ -1,0 +1,320 @@
+<html>
+
+  <head>
+    <title>Feasting with the Gods</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/img/H-logo_45.jpg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+     <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/mouseover_sidebar.css">
+  </head>
+
+  <!-- webmap by Lex Berman, Harvard CGA, 2017 -->
+  <!-- this from version side_22 2017-12-14  BRONZE -->
+
+<body>
+
+<!-- Set Title and Branding   -->
+
+<div class="sidebar">
+ <div id="header-text">FEASTING WITH THE GODS</div>
+ <div id="museum">HARVARD ART MUSEUMS</div>
+ <div id="description">
+  Please select a map to view:<p>
+  <a href="http://127.0.0.1:92/bronze.html" class="btn">BRONZE AGE</a>
+  <br><br>
+  <a href="http://127.0.0.1:92/iron.html" class="btn">IRON AGE</a>
+ </div>
+ <div id="footer-text">(c) 2017 Harvard Art Musuems</div>
+</div>
+
+<div>
+  <div class="float-title-bronze">BRONZE AGE</div>
+  <div id="mapdiv"></div>
+</div>
+<script>
+
+
+//  conventions
+//  raw data variables abbreviated in lower case:  rgn1, rgn2, art1
+//  layer group items with single letter caps:  R1, R2, A1
+
+
+// get BRONZE layer data
+var rgn1 = 'data/regions1.geojson';
+// var rgn2 = 'data/regions2.geojson';
+var art1 = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/feast_test_20170919.geojson';
+var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20171219.geojson';
+var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20171219.geojson';
+var region_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_bronze_20171219.geojson';
+
+// get IRON layer data
+var art_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_iron_20171222.geojson';
+var city_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_iron_20171222.geojson';
+var region_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_iron_20171222.geojson';
+
+// setup layergroup items
+var ArtB = L.layerGroup();
+var CitB = L.layerGroup();
+var RegB = L.layerGroup();
+var ArtI = L.layerGroup();
+var CitI = L.layerGroup();
+var RegI = L.layerGroup();
+var R1 = L.layerGroup();
+var AZ = L.layerGroup();
+
+
+
+// tooltip and popup behavior
+var popup = L.popup();  
+
+function regionA(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-1"}).openTooltip();
+}
+function regionB(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-2"}).openTooltip();
+}
+function regionI(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-4"}).openTooltip();
+}
+
+function onEachFeature(feature, layer) {
+  layer.bindPopup(
+    "<strong>" + feature.properties.Title + "</strong><hr>"
+    + feature.properties.Period  + "<br><img src='thumb/" 
+    + feature.properties.file + "'>", {maxWidth: "200px"}
+    );
+    layer.on('mouseover', function(e) {
+    popup.setLatLng(e.latlng)
+    this.openPopup();
+});
+}
+
+function artBronze(feature, layer) {
+  layer.bindPopup(
+    "<strong>" + feature.properties.Title + "</strong><hr>"
+    + feature.properties.Period + "<br>Culture: " 
+    + feature.properties.Culture
+    + "<br><img src='thumb/" 
+    + feature.properties.thumb + "'>", {maxWidth: "200px"}
+    );
+    layer.on('mouseover', function(e) {
+    popup.setLatLng(e.latlng)
+    this.openPopup();
+});
+}
+
+function cityLabelB(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-3", offset: [0,20]}).openTooltip();
+}
+function cityLabelI(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-5", offset: [0,20]}).openTooltip();
+}
+
+// adding REGION objects
+$.getJSON(rgn1, function (data) {
+  var geojsonLayer1 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.name)
+                  return new L.CircleMarker(latlng, {
+                    radius: 8,
+                    fillColor: "#000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: regionA
+            }).addTo(R1);
+});
+
+$.getJSON(region_bronze, function (data) {
+  var geojsonLayer2 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.Title)
+                  return new L.CircleMarker(latlng, {
+                    radius: 0,
+                    fillColor: "#000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: regionB
+            }).addTo(RegB);
+});
+
+$.getJSON(region_iron , function (data) {
+  var geojsonLayer8 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.Title)
+                  return new L.CircleMarker(latlng, {
+                    radius: 0,
+                    fillColor: "#000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: regionI
+            }).addTo(RegI);
+});
+
+// adding CITY objects
+$.getJSON(city_bronze, function (data) {
+  var geojsonLayer3 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.Title)
+                  return new L.CircleMarker(latlng, {
+                    radius: 2,
+                    fillColor: "#000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 0,
+                    fillOpacity: 0
+                  }
+                );
+              },
+              onEachFeature: cityLabelB
+            }).addTo(CitB);
+});
+
+$.getJSON(city_iron, function (data) {
+  var geojsonLayer7 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.Title)
+                  return new L.CircleMarker(latlng, {
+                    radius: 2,
+                    fillColor: "#000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 0,
+                    fillOpacity: 0
+                  }
+                );
+              },
+              onEachFeature: cityLabelI
+            }).addTo(CitI);
+});
+
+
+
+// adding Artifact Point Objects
+$.getJSON(art1, function (data) {
+  var geojsonLayer4 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  return new L.CircleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: onEachFeature
+            }).addTo(AZ);
+});
+
+
+$.getJSON(art_bronze, function (data) {
+  var geojsonLayer5 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  return new L.CircleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: artBronze
+            }).addTo(ArtB);
+});
+
+$.getJSON(art_iron, function (data) {
+  var geojsonLayer6 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  return new L.CircleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#686868",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: artBronze
+            }).addTo(ArtI);
+});
+
+
+
+
+//adding base layers
+    var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYWxleGZvcnR1bmEiLCJhIjoiZmJjNzA5YzVkZTkzZjU5MzRjNTA4NDkxNjI2MGJlYjgifQ.ZxI0M3tinJFDw7F5oQwseQ', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap<\/a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery © <a href="http://mapbox.com">Mapbox<\/a>',
+        maxZoom: 18, opacity: 0.6,
+        id: 'alexfortuna.mn58gf63',
+        accessToken: 'pk.eyJ1IjoiYWxleGZvcnR1bmEiLCJhIjoiZmJjNzA5YzVkZTkzZjU5MzRjNTA4NDkxNjI2MGJlYjgifQ.ZxI0M3tinJFDw7F5oQwseQ'}),
+
+        carto_light = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: 'code &raquo; <a href="http://www.dbr.nu/bio" target="_new">Lex Berman</a>',
+            maxZoom: 19, opacity: 0.8}),
+
+        natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+        maxZoom: 16, opacity: 0.6});
+    
+    //map initiation
+    var map2 = L.map('mapdiv', {
+                center: [30, 32],
+                zoom: 4,
+                layers: [carto_light, ArtB, CitB]
+    });
+
+    // base maps for control
+    var basemaps = {
+        "Gray": carto_light,
+//        "Natl Geo": natGeo,
+        "Terrain": streets
+    };
+        
+
+
+    // overlay map for control
+        var overlaymap = {
+        "Bronze Age: Artifacts": ArtB,
+        "Bronze Age: Cities": CitB,  
+        "Bronze Age: Regions": RegB,
+        "Iron Age: Artifacts": ArtI,
+        "Iron Age: Cities": CitI,
+        "Iron Age: Regions": RegI,
+        "Artifacts 1": AZ,          
+        "Regions 1": R1
+    };
+
+
+
+    // adding layers control element
+    L.control.layers(basemaps, overlaymap).addTo(map2);
+
+//    map2.scrollWheelZoom.disable()
+
+
+</script>
+
+</body>
+</html>

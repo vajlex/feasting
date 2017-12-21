@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "city_iron_20171222",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Feature_ID": 11, "Feature_Ty": "City", "Title": "Susa", "Coordinate": "Sush, Iran", "Location N": "Susa", "Latitude": 32.195795, "Longtitude": 48.254283, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 48.254283, 32.195795 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 3, "Feature_Ty": "City", "Title": "Athens", "Coordinate": "Athens, Greece", "Location N": "Athens", "Latitude": 37.98381, "Longtitude": 23.727539, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 23.727539, 37.98381 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 4, "Feature_Ty": "City", "Title": "Corinth", "Coordinate": "Corinth", "Location N": "Corinth", "Latitude": 37.938637, "Longtitude": 22.932238, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 22.932238, 37.938637 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 5, "Feature_Ty": "City", "Title": "Samos", "Coordinate": "Ireo, Samos, Greece", "Location N": "Samos", "Latitude": 37.754786, "Longtitude": 26.97777, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 26.97777, 37.754786 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 9, "Feature_Ty": "City", "Title": "Dur-Sharrukin", "Coordinate": "Khorsabad, Iraq", "Location N": "Dur-Sharrukin", "Latitude": 36.510153, "Longtitude": 43.223476, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 43.223476, 36.510153 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 8, "Feature_Ty": "City", "Title": "Ninevah", "Coordinate": "Kuyunyik, Iraq", "Location N": "Ninevah", "Latitude": 36.365677, "Longtitude": 43.158838, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 43.158838, 36.365677 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 7, "Feature_Ty": "City", "Title": "Kalhu", "Coordinate": "Nimrud, Iraq", "Location N": "Kalhu", "Latitude": 36.098627, "Longtitude": 43.328475, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 43.328475, 36.098627 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 2, "Feature_Ty": "City", "Title": "Carthage", "Coordinate": "Tunis\/Sidi Bou Said", "Location N": "Carthage", "Latitude": 36.862585, "Longtitude": 10.332949, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 10.332949, 36.862585 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 6, "Feature_Ty": "City", "Title": "Gordion", "Coordinate": "Yassihuyuk, Turkey", "Location N": "Gordion", "Latitude": 39.657535, "Longtitude": 31.990918, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 31.990918, 39.657535 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 1, "Feature_Ty": "City", "Title": "Rome", "Coordinate": null, "Location N": "Rome", "Latitude": 41.9, "Longtitude": 12.5, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 12.5, 41.9 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 10, "Feature_Ty": "City", "Title": "Babylon", "Coordinate": null, "Location N": "Babylon", "Latitude": 32.468191, "Longtitude": 44.550193, "type": "Approximate", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 44.550193, 32.468191 ] } }
+]
+}

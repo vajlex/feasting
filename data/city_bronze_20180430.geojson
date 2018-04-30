@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "city_bronze_20180430",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Feature_ID": 142, "Feature_Type": "City", "Title": "Kultepe", "Coordinate Location": "Kultepe, Turkey", "Location Name": "Kultepe", "Latitude": 38.72285, "Longtitude": 35.49181, "type": null, "Description": null }, "geometry": { "type": "Point", "coordinates": [ 35.49181, 38.72285 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 159, "Feature_Type": "City", "Title": "Mycenae", "Coordinate Location": "Mycenae, Greece", "Location Name": "Mycenae", "Latitude": 37.730792, "Longtitude": 22.756382, "type": null, "Description": null }, "geometry": { "type": "Point", "coordinates": [ 22.756382, 37.730792 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 160, "Feature_Type": "City", "Title": "Knossos", "Coordinate Location": "Knossos, Crete", "Location Name": "Knossos", "Latitude": 35.29806, "Longtitude": 25.163056, "type": null, "Description": null }, "geometry": { "type": "Point", "coordinates": [ 25.163056, 35.29806 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 166, "Feature_Type": "City", "Title": "Thebes", "Coordinate Location": "Thebes, Egypt", "Location Name": "Thebes", "Latitude": 25.720556, "Longtitude": 32.610278, "type": null, "Description": null }, "geometry": { "type": "Point", "coordinates": [ 32.610278, 25.720556 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 175, "Feature_Type": "City", "Title": "Enkomi", "Coordinate Location": "Enkomi, Cyprus", "Location Name": "Enkomi", "Latitude": 35.158333, "Longtitude": 33.891111, "type": null, "Description": null }, "geometry": { "type": "Point", "coordinates": [ 33.891111, 35.158333 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 57, "Feature_Type": "City", "Title": "Ugarit", "Coordinate Location": "Ras Shamra, Syria", "Location Name": "Ugarit", "Latitude": 35.60216, "Longtitude": 35.78504, "type": "Approximate", "Description": null }, "geometry": { "type": "Point", "coordinates": [ 35.78504, 35.60216 ] } }
+]
+}

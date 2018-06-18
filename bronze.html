@@ -23,9 +23,11 @@
  <div id="museum">HARVARD ART MUSEUMS</div>
  <div id="description">
   Please select a map to view:<p>
-  <a href="http://127.0.0.1:92/bronze.html" class="btn">BRONZE AGE</a>
+  <a href="index.html" class="btn">ALL ARTIFACTS</a>
   <br><br>
-  <a href="http://127.0.0.1:92/iron.html" class="btn">IRON AGE</a>
+  <a href="bronze.html" class="btn">BRONZE AGE</a>
+  <br><br>
+  <a href="iron.html" class="btn">IRON AGE</a>
  </div>
  <div id="footer-text">(c) 2017 Harvard Art Musuems</div>
 </div>
@@ -46,8 +48,8 @@
 var rgn1 = 'data/regions1.geojson';
 // var rgn2 = 'data/regions2.geojson';
 var art1 = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/feast_test_20170919.geojson';
-var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20171219.geojson';
-var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20171219.geojson';
+var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20180618.geojson';
+var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20180430.geojson';
 var region_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_bronze_20171219.geojson';
 
 // get IRON layer data
@@ -81,29 +83,48 @@ function regionI(feature, layer) {
 }
 
 function onEachFeature(feature, layer) {
-  layer.bindPopup(
-    "<strong>" + feature.properties.Title + "</strong><hr>"
-    + feature.properties.Period  + "<br><img src='thumb/" 
-    + feature.properties.file + "'>", {maxWidth: "200px"}
-    );
-    layer.on('mouseover', function(e) {
-    popup.setLatLng(e.latlng)
-    this.openPopup();
-});
-}
-
-function artBronze(feature, layer) {
+      var check1 = "";
+      if(typeof(feature.properties.Culture) !== null){
+          check1 += "<br />Culture: " + feature.properties.Culture
+      }
   layer.bindPopup(
     "<strong>" + feature.properties.Title + "</strong><hr>"
     + feature.properties.Period + "<br>Culture: " 
-    + feature.properties.Culture
-    + "<br><img src='thumb/" 
-    + feature.properties.thumb + "'>", {maxWidth: "200px"}
+    + check1
+    + "<br><img src='thumbnails/" 
+    + feature.properties.Image_File + "'>", {maxWidth: "200px"}
     );
+/*  drop mouseover for IOS ipad click to work
     layer.on('mouseover', function(e) {
     popup.setLatLng(e.latlng)
     this.openPopup();
 });
+*/
+}
+
+function artBronze(feature, layer) {
+      var check1 = "";
+      if(!feature.properties.Period){check1 += ""} 
+      else {check1 += "Period: " + feature.properties.Period}
+      var check2 = "";
+      if(!feature.properties.Culture){check2 += ""} 
+      else {check2 += "<br />Culture: " + feature.properties.Culture}
+      var check3 = "";
+      if(!feature.properties.Description){check3 += ""} 
+      else {check3 += "<br />Culture: " + feature.properties.Description}
+  layer.bindPopup(
+    "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
+    + check3     
+    + "<br><img src='thumbnails/" 
+    + feature.properties.Image_File + "'>", {maxWidth: "200px"}
+
+    );
+/*  drop mouseover for IOS ipad click to work
+    layer.on('mouseover', function(e) {
+    popup.setLatLng(e.latlng)
+    this.openPopup();
+});
+*/
 }
 
 function cityLabelB(feature, layer) {

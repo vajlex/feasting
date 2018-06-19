@@ -84,13 +84,17 @@ function regionI(feature, layer) {
 
 function onEachFeature(feature, layer) {
       var check1 = "";
-      if(typeof(feature.properties.Culture) !== null){
-          check1 += "<br />Culture: " + feature.properties.Culture
-      }
+      if(!feature.properties.Period){check1 += ""} 
+      else {check1 += "Period: " + feature.properties.Period}
+      var check2 = "";
+      if(!feature.properties.Culture){check2 += ""} 
+      else {check2 += "<br />Culture: " + feature.properties.Culture}
+      var check3 = "";
+      if(!feature.properties.Description){check3 += ""} 
+      else {check3 += "<hr>" + feature.properties.Description + "<br />"}
   layer.bindPopup(
-    "<strong>" + feature.properties.Title + "</strong><hr>"
-    + feature.properties.Period + "<br>Culture: " 
-    + check1
+    "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
+    + check3     
     + "<br><img src='thumbnails/" 
     + feature.properties.Image_File + "'>", {maxWidth: "200px"}
     );
@@ -111,7 +115,7 @@ function artBronze(feature, layer) {
       else {check2 += "<br />Culture: " + feature.properties.Culture}
       var check3 = "";
       if(!feature.properties.Description){check3 += ""} 
-      else {check3 += "<br />Culture: " + feature.properties.Description}
+      else {check3 += "<hr>" + feature.properties.Description  + "<br />"}
   layer.bindPopup(
     "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
     + check3     

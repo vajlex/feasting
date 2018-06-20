@@ -49,7 +49,7 @@
 </div>
 
 <div>
-  <div class="float-title-bronze">HOME</div>
+  <div class="float-title-home">HOME</div>
   <div id="mapdiv"></div>
 </div>
 <script>
@@ -58,10 +58,10 @@
 // create a map instance
 
   var map2 = L.map('mapdiv', {
-    center: [30, 31],
-    zoom: 4
+    center: [30, 55],
+    zoom: 3
   });
-   map2.addLayer(carto_light);
+   map2.addLayer(esri);
 
 
 //Creates a Marker Cluster Group

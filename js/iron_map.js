@@ -1,5 +1,6 @@
 /*
  * Custom configurations for Museum Feasting maps.
+ * Iron Age Map
  * Lex Berman, 2017-2018
  */
 
@@ -18,14 +19,23 @@
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
         maxZoom: 16, opacity: 0.6});
-    
 
+        thunder = L.tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=b06874d83797418fa918de875a67aeb8', {
+        attribution: 'Tiles &copy; Thunderforest & Gravitystorm Ltd.',
+        maxZoom: 16, opacity: 0.8});
+
+        esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; ESRI.',
+        maxZoom: 16, opacity: 0.8});
+        
 
     // base maps for control
     var basemaps = {
-        "Gray": carto_light,
-//        "Natl Geo": natGeo,
-        "Terrain": streets
+        "Terrain": esri, 
+ //       "Gray": carto_light,
+        "Modern Map": natGeo,
+ //       "Terrain (OSM)": streets,
+ //       "Terrain (Thunderforest)": thunder
     };
 
 
@@ -34,65 +44,27 @@
 //  layer group items with single letter caps:  R1, R2, A1
 
 
-// get BRONZE layer data
-var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20180618.geojson';
-var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20180430.geojson';
-var region_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_bronze_20171219.geojson';
-
 // get IRON layer data
 var art_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_iron_20180618.geojson';
 var city_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_iron_20171222.geojson';
 var region_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_iron_20171222.geojson';
 
-// get GREECE PERSIAN layer data
-var city_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_greece_20180430.geojson';
-var region_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_greece_20180430.geojson';
-
-// get ROMAN PARTHIAN layer data
-var city_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_roman_20180430.geojson';
-
 // setup layergroup items
-var ArtB = L.layerGroup();
-var CitB = L.layerGroup();
-var RegB = L.layerGroup();
 var ArtI = L.layerGroup();
-var CitI = L.layerGroup();
 var RegI = L.layerGroup();
-var CitG = L.layerGroup();
-var RegG = L.layerGroup();
-var CitR = L.layerGroup();
-
+var CitI = L.layerGroup();
 
 // tooltip and popup behavior
 var popup = L.popup();  
 
-function regionA(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-1"}).openTooltip();
-}
-function regionB(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-2"}).openTooltip();
-}
+
 function regionI(feature, layer) {
   layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-4"}).openTooltip();
 }
 
-function regionG(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-7"}).openTooltip();
-}
 
-function cityLabelB(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-3", offset: [0,20]}).openTooltip();
-}
 function cityLabelI(feature, layer) {
   layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-5", offset: [0,20]}).openTooltip();
-}
-
-function cityLabelG(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-6", offset: [0,20]}).openTooltip();
-}
-
-function cityLabelR(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-8", offset: [0,20]}).openTooltip();
 }
 
 function onEachFeature(feature, layer) {
@@ -132,8 +104,8 @@ function artBronze(feature, layer) {
   layer.bindPopup(
     "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
     + check3     
-    + "<br><img src='thumbnails/" 
-    + feature.properties.Image_File + "'>", {maxWidth: "200px"}
+    + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
+    + feature.properties.Image_File + "'></a>", {maxWidth: "200px"}
 
     );
 /*  drop mouseover for IOS ipad click to work
@@ -144,27 +116,7 @@ function artBronze(feature, layer) {
 */
 }
 
-
-
 // adding REGION objects
-$.getJSON(region_bronze, function (data) {
-  var geojsonLayer2 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 0,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: regionB
-            }).addTo(RegB);
-});
-
 $.getJSON(region_iron , function (data) {
   var geojsonLayer8 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
@@ -175,7 +127,8 @@ $.getJSON(region_iron , function (data) {
                     color: "#000",
                     weight: 1,
                     opacity: 1,
-                    fillOpacity: 0.8
+                    fillOpacity: 0.8,
+                    text : 'Leaflet.LabelTextCollision!!!!!!!!'
                   }
                 );
               },
@@ -183,43 +136,7 @@ $.getJSON(region_iron , function (data) {
             }).addTo(RegI);
 });
 
-$.getJSON(region_greece , function (data) {
-  var geojsonLayer10 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 0,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: regionG
-            }).addTo(RegG);
-});
-
 // adding CITY objects
-$.getJSON(city_bronze, function (data) {
-  var geojsonLayer3 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 2,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0,
-                    fillOpacity: 0
-                  }
-                );
-              },
-              onEachFeature: cityLabelB
-            }).addTo(CitB);
-});
-
 $.getJSON(city_iron, function (data) {
   var geojsonLayer7 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
@@ -238,60 +155,8 @@ $.getJSON(city_iron, function (data) {
             }).addTo(CitI);
 });
 
-$.getJSON(city_greece, function (data) {
-  var geojsonLayer9 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 2,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0,
-                    fillOpacity: 0
-                  }
-                );
-              },
-              onEachFeature: cityLabelG
-            }).addTo(CitG);
-});
-
-$.getJSON(city_roman, function (data) {
-  var geojsonLayer11 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 2,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0,
-                    fillOpacity: 0
-                  }
-                );
-              },
-              onEachFeature: cityLabelR
-            }).addTo(CitR);
-});
 
 // adding Artifact Point Objects
-$.getJSON(art_bronze, function (data) {
-  var geojsonLayer5 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  return new L.CircleMarker(latlng, {
-                    radius: 6,
-                    fillColor: "#ff7800",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: artBronze
-            }).addTo(ArtB);
-});
-
 $.getJSON(art_iron, function (data) {
   var geojsonLayer6 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
@@ -307,4 +172,11 @@ $.getJSON(art_iron, function (data) {
               },
               onEachFeature: artBronze
             }).addTo(ArtI);
+});
+
+
+//  Label Collision see:  https://github.com/yakitoritabetai/Leaflet.LabelTextCollision
+
+var labelTextCollision = new L.LabelTextCollision({
+  collisionFlg : true
 });

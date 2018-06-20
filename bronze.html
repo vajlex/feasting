@@ -23,7 +23,7 @@
     <script src="dist/oms.min.js"></script>
 
    <!-- custom map assets -->
-    <script src="js/feast_map.js"></script>   
+    <script src="js/bronze_map.js"></script>   
    <link rel="stylesheet" type="text/css" href="css/mouseover_sidebar.css">
   </head>
 
@@ -55,10 +55,14 @@
 // create a map instance
 
   var map2 = L.map('mapdiv', {
-    center: [30, 32],
-    zoom: 5
+    center: [30.8, 34],
+    zoom: 6
   });
-   map2.addLayer(carto_light);
+   map2.addLayer(esri);
+
+// add REGIONS
+    map2.addLayer(RegB);
+
 
 //Creates a Marker Cluster Group
 // var mcg = L.markerClusterGroup.layerSupport().addTo(map2);
@@ -71,22 +75,16 @@ var ArtB = L.layerGroup().addTo(mcg);
 
 //Checking in the 'sub groups'
 mcg.checkIn([
-    ArtB,
-    ArtI
+    ArtB
 ]);
 
         
     // overlay map for control
         var overlaymap = {
         "Bronze Age: Artifacts": ArtB,
-        "Bronze Age: Cities": CitB,  
         "Bronze Age: Regions": RegB,
-        "Iron Age: Artifacts": ArtI,
-        "Iron Age: Cities": CitI,
-        "Iron Age: Regions": RegI,
-        "Greece Persian Age: Cities": CitG,
-        "Greece Persian Age: Regions": RegG,
-        "Roman Parthian Age: Cities": CitR
+        "Bronze Age: Cities": CitB
+
     };
 
 

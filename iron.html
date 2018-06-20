@@ -23,7 +23,7 @@
     <script src="dist/oms.min.js"></script>
 
    <!-- custom map assets -->
-    <script src="js/feast_map.js"></script>   
+    <script src="js/iron_map.js"></script>       
    <link rel="stylesheet" type="text/css" href="css/mouseover_sidebar.css">
   </head>
 
@@ -46,7 +46,7 @@
 </div>
 
 <div>
-  <div class="float-title-bronze">IRON AGE</div>
+  <div class="float-title-iron">IRON AGE</div>
   <div id="mapdiv"></div>
 </div>
 <script>
@@ -58,9 +58,12 @@
 
   var map2 = L.map('mapdiv', {
     center: [35, 33],
-    zoom:5
+    zoom: 5
   });
-   map2.addLayer(carto_light);
+   map2.addLayer(esri);
+
+// add REGIONS
+    map2.addLayer(RegI);
 
 //Creates a Marker Cluster Group
 // var mcg = L.markerClusterGroup.layerSupport().addTo(map2);
@@ -73,31 +76,22 @@ var ArtI = L.layerGroup().addTo(mcg);
 
 //Checking in the 'sub groups'
 mcg.checkIn([
-    ArtB,
     ArtI
 ]);
         
 
     // overlay map for control
         var overlaymap = {
-        "Bronze Age: Artifacts": ArtB,
-        "Bronze Age: Cities": CitB,  
-        "Bronze Age: Regions": RegB,
         "Iron Age: Artifacts": ArtI,
-        "Iron Age: Cities": CitI,
         "Iron Age: Regions": RegI,
-        "Greece Persian Age: Cities": CitG,
-        "Greece Persian Age: Regions": RegG,
-        "Roman Parthian Age: Cities": CitR
-    };
+        "Iron Age: Cities": CitI
 
+    };
 
 
 
     // adding layers control element
     L.control.layers(basemaps, overlaymap).addTo(map2);
-
-//    map2.scrollWheelZoom.disable()
 
 
 </script>

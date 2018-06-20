@@ -18,14 +18,23 @@
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
         maxZoom: 16, opacity: 0.6});
-    
 
+        thunder = L.tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=b06874d83797418fa918de875a67aeb8', {
+        attribution: 'Tiles &copy; Thunderforest & Gravitystorm Ltd.',
+        maxZoom: 16, opacity: 0.8});
+
+        esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; ESRI.',
+        maxZoom: 16, opacity: 0.8});
+        
 
     // base maps for control
     var basemaps = {
-        "Gray": carto_light,
-//        "Natl Geo": natGeo,
-        "Terrain": streets
+        "Terrain": esri, 
+ //       "Gray": carto_light,
+        "Modern Map": natGeo,
+ //       "Terrain (OSM)": streets,
+ //       "Terrain (Thunderforest)": thunder
     };
 
 

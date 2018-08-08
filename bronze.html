@@ -1,7 +1,7 @@
 <html>
 
-  <!-- webmap by Lex Berman, Harvard CGA, 2017 -->
-  <!-- this from version side_22 2017-12-14  BRONZE -->
+ <!-- webmap by Lex Berman,  www.dbr.nu -->
+ <!-- 2017-2018  BRONZE -->
 
   <head>
     <title>Feasting with the Gods</title>
@@ -35,14 +35,24 @@
  <div id="header-text">FEASTING WITH THE GODS</div>
  <div id="museum">HARVARD ART MUSEUMS</div>
  <div id="description">
-  Please select a map to view:<p>
+  Select a map to view:<p>
   <a href="index.html" class="btn">HOME</a>
   <br><br>
   <a href="bronze.html" class="btn">BRONZE AGE</a>
   <br><br>
   <a href="iron.html" class="btn">IRON AGE</a>
+  <br><br>
+  <a href="greece.html" class="btn">GREECE - PERSIAN AGE</a>
+  <br><br>
+  <a href="roman.html" class="btn">ROMAN PARTHIAN AGE</a>
+  <br><br>
+  <a href="sassanian.html" class="btn">SASSANIAN AGE</a>  
  </div>
- <div id="footer-text">(c) 2017 Harvard Art Musuems</div>
+  <div id="description">
+  Legend:<p>
+  <img src="img/legend_color_bronze.png"> Bronze
+ </div>
+ <div id="footer-text">(c) 2018  Harvard Art Musuems</div>
 </div>
 
 <div>
@@ -56,7 +66,7 @@
 
   var map2 = L.map('mapdiv', {
     center: [30.8, 34],
-    zoom: 6
+    zoom: 5
   });
    map2.addLayer(esri);
 

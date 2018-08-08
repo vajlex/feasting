@@ -1,0 +1,100 @@
+.my_marker div{
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+		
+.my_marker {
+	width: 20px;
+	height: 20px;
+	border-width: 2px;
+	border-radius:15px;
+	margin-top: 0px;
+	margin-left: -10px;
+	border-style: solid;
+	text-align: center;
+}
+		
+.my_marker0 {
+	fill: #FFD700;
+	background: #FFD700;
+	stroke: #444;
+	border-color: #444;
+}
+		
+		
+/* MARKER CLUSTER STYLE */
+/*all marker cluster */
+.marker-cluster {
+	background-clip: padding-box;
+	background-color: rgba(255, 238, 140, 0.6); /* change back color here*/
+}
+	
+.marker-cluster div {
+	text-align: center;
+	font: bold 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	background-color: rgba(255, 215, 0, 0.7);  /* change fore color here*/
+}
+
+/*small marker cluster*/
+.marker-cluster-small {
+	border-radius: 15px;
+}
+
+.marker-cluster-small div {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius: 10px;
+}
+
+.marker-cluster-small span {
+	line-height: 20px;
+}
+	
+/*medium marker cluster*/
+.marker-cluster-medium {
+	border-radius: 20px;
+}
+	
+.marker-cluster-medium div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius: 15px;
+}
+
+.marker-cluster-medium span {
+	line-height: 30px;
+}	
+	
+	
+/*large marker cluster*/	
+.marker-cluster-large {
+	border-radius: 30px;
+}
+	
+.marker-cluster-large div {
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius: 20px;
+}
+
+.marker-cluster-large span {
+	line-height: 40px;
+}	
+	
+	
+	
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster, .leaflet-oldie .marker-cluster div  {
+	background-color: rgba(255, 215, 0, 1);
+}
+.leaflet-oldie .marker-cluster div {
+	background-color: rgba(255, 238, 140, 1);
+}

@@ -1,7 +1,7 @@
 <html>
 
  <!-- webmap by Lex Berman,  www.dbr.nu -->
- <!-- 2017-2018  IRON -->
+ <!-- 2017-2018  ROMAN -->
 
   <head>
     <title>Feasting with the Gods</title>
@@ -23,7 +23,7 @@
     <script src="dist/oms.min.js"></script>
 
    <!-- custom map assets -->
-    <script src="js/iron_map.js"></script>       
+    <script src="js/roman_map.js"></script>   
    <link rel="stylesheet" type="text/css" href="css/mouseover_sidebar.css">
   </head>
 
@@ -46,34 +46,33 @@
   <br><br>
   <a href="roman.html" class="btn">ROMAN - PARTHIAN AGE</a>
   <br><br>
-  <a href="sassanian.html" class="btn">SASSANIAN AGE</a> 
+  <a href="sassanian.html" class="btn">SASSANIAN AGE</a>  
  </div>
   <div id="description">
   Legend:<p>
-  <img src="img/legend_color_iron.png"> Iron
- </div>
+  <img src="img/legend_color_roman.png"> Roman - Parthian
+ </div> 
  <div id="footer-text">(c) 2018  Harvard Art Musuems</div>
 </div>
 
 <div>
-  <div class="float-title-iron">IRON AGE</div>
+  <div class="float-title-greece">ROMAN - PARTHIAN AGE</div>
   <div id="mapdiv"></div>
 </div>
 <script>
 
 
-    
- 
 // create a map instance
 
   var map2 = L.map('mapdiv', {
-    center: [35, 38],
-    zoom: 5
+    center: [33, 45],
+    zoom: 3
   });
    map2.addLayer(esri);
 
 // add REGIONS
-    map2.addLayer(RegI);
+    map2.addLayer(RegR);
+
 
 //Creates a Marker Cluster Group
 // var mcg = L.markerClusterGroup.layerSupport().addTo(map2);
@@ -81,27 +80,27 @@
 var mcg = L.markerClusterGroup.layerSupport({ spiderfyDistanceMultiplier: 3}).addTo(map2);
 
 // setup layergroup items with some in markerCluster
-var ArtI = L.layerGroup().addTo(mcg);
+var ArtR = L.layerGroup().addTo(mcg);
 
 
 //Checking in the 'sub groups'
 mcg.checkIn([
-    ArtI
+    ArtR
 ]);
-        
 
+        
     // overlay map for control
         var overlaymap = {
-        "Iron Age: Artifacts": ArtI,
-        "Iron Age: Regions": RegI,
-        "Iron Age: Cities": CitI
-
+        "Roman - Parthian Age: Artifacts": ArtR,
+        "Roman - Parthian Age: Cities": CitR,
+        "Roman - Parthian Age: Regions": RegR,
     };
-
 
 
     // adding layers control element
     L.control.layers(basemaps, overlaymap).addTo(map2);
+
+//    map2.scrollWheelZoom.disable()
 
 
 </script>

@@ -1,13 +1,13 @@
 /*
  * Custom configurations for Museum Feasting maps.
- * Iron Age Map
+ * Sassanian Age Map
  * Lex Berman, 2017-2018, www.dbr.nu
  */
- 
+
  //adding base layers
     var 
         esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; ESRI. &nbsp;  Map design: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
+        attribution: 'Tiles &copy; ESRI.  &nbsp;  Map design: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
         maxZoom: 16, opacity: 0.8}),
 
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -26,27 +26,26 @@
 //  layer group items with single letter caps:  R1, R2, A1
 
 
-// get IRON layer data
-var art_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_iron_20180723.geojson';
-var city_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_iron_20171222.geojson';
-var region_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_iron_20171222.geojson';
+// get SASSANINAN layer data
+var art_sassanian = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_sassanian_20180806.geojson';
+// var city_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_greece_20180430.geojson';
+var region_sassanian = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_sassanian_20180806.geojson';
 
 // setup layergroup items
-var ArtI = L.layerGroup();
-var RegI = L.layerGroup();
-var CitI = L.layerGroup();
+var ArtS = L.layerGroup();
+var RegS = L.layerGroup();
+// var CitG = L.layerGroup();
 
 // tooltip and popup behavior
 var popup = L.popup();  
 
 
-function regionI(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-4"}).openTooltip();
+function regionS(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-11"}).openTooltip();
 }
 
-
-function cityLabelI(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-5", offset: [0,20]}).openTooltip();
+function cityLabelS(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-6", offset: [0,20]}).openTooltip();
 }
 
 function onEachFeature(feature, layer) {
@@ -73,13 +72,17 @@ function onEachFeature(feature, layer) {
 */
 }
 
-function artIron(feature, layer) {
+//function for Greece artifacts
+function artSassanian(feature, layer) {
       var check1 = "";
       if(!feature.properties.Period){check1 += ""} 
       else {check1 += "Period: " + feature.properties.Period}
       var check2 = "";
       if(!feature.properties.Culture){check2 += ""} 
       else {check2 += "<br />Culture: " + feature.properties.Culture}
+      var check5 = "";
+      if(!feature.properties.Location){check5 += ""} 
+      else {check5 += "<br />Location: " + feature.properties.Location}
       var check3 = "";
       if(!feature.properties.Desc_text){check3 += ""} 
       else {check3 += "<hr>" + feature.properties.Desc_text  + "<br />"}
@@ -89,7 +92,7 @@ function artIron(feature, layer) {
 
   layer.bindPopup(
     "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
-    + check3
+    + check5 + check3
     + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
     + feature.properties.Image_File + "'></a>"
     + check4
@@ -102,54 +105,14 @@ function artIron(feature, layer) {
 */
 }
 
-
 // adding REGION objects
-$.getJSON(region_iron , function (data) {
-  var geojsonLayer8 = L.geoJson(data, {
+$.getJSON(region_sassanian , function (data) {
+  var geojsonLayer10 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
                   label = String(feature.properties.Title)
                   return new L.CircleMarker(latlng, {
                     radius: 0,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8,
-                    text : 'Leaflet.LabelTextCollision!!!!!!!!'
-                  }
-                );
-              },
-              onEachFeature: regionI
-            }).addTo(RegI);
-});
-
-// adding CITY objects
-$.getJSON(city_iron, function (data) {
-  var geojsonLayer7 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 2,
-                    fillColor: "#000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0,
-                    fillOpacity: 0
-                  }
-                );
-              },
-              onEachFeature: cityLabelI
-            }).addTo(CitI);
-});
-
-
-// adding Artifact Point Objects
-$.getJSON(art_iron, function (data) {
-  var geojsonLayer6 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  return new L.CircleMarker(latlng, {
-                    radius: 6,
-                    fillColor: "#686868",
+                    fillColor: "#0000ff",
                     color: "#000",
                     weight: 1,
                     opacity: 1,
@@ -157,13 +120,51 @@ $.getJSON(art_iron, function (data) {
                   }
                 );
               },
-              onEachFeature: artIron
-            }).addTo(ArtI);
+              onEachFeature: regionS
+            }).addTo(RegS);
+});
+/*
+// adding CITY objects
+$.getJSON(city_greece, function (data) {
+  var geojsonLayer9 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  label = String(feature.properties.Title)
+                  return new L.CircleMarker(latlng, {
+                    radius: 2,
+                    fillColor: "#0000ff",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 0,
+                    fillOpacity: 0
+                  }
+                );
+              },
+              onEachFeature: cityLabelG
+            }).addTo(CitG);
 });
 
+*/
+// adding Artifact Point Objects
+$.getJSON(art_sassanian, function (data) {
+  var geojsonLayer5 = L.geoJson(data, {
+                pointToLayer: function(feature, latlng) {
+                  return new L.CircleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#CC0033",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }
+                );
+              },
+              onEachFeature: artSassanian
+            }).addTo(ArtS);
+});
 
 //  Label Collision see:  https://github.com/yakitoritabetai/Leaflet.LabelTextCollision
-
+/*
 var labelTextCollision = new L.LabelTextCollision({
   collisionFlg : true
 });
+*/

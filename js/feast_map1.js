@@ -1,24 +1,33 @@
 /*
  * Custom configurations for Museum Feasting maps.
- * Lex Berman, 2017-2018, www.dbr.nu
+ * Lex Berman, 2017-2018
  */
 
+
  //adding base layers
-    var 
-        esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; ESRI. &nbsp;  Map design: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
-        maxZoom: 16, opacity: 0.8}),
+    var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYWxleGZvcnR1bmEiLCJhIjoiZmJjNzA5YzVkZTkzZjU5MzRjNTA4NDkxNjI2MGJlYjgifQ.ZxI0M3tinJFDw7F5oQwseQ', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap<\/a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery © <a href="http://mapbox.com">Mapbox<\/a>',
+        maxZoom: 18, opacity: 0.6,
+        id: 'alexfortuna.mn58gf63',
+        accessToken: 'pk.eyJ1IjoiYWxleGZvcnR1bmEiLCJhIjoiZmJjNzA5YzVkZTkzZjU5MzRjNTA4NDkxNjI2MGJlYjgifQ.ZxI0M3tinJFDw7F5oQwseQ'}),
+
+        carto_light = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: 'code &raquo; <a href="http://www.dbr.nu/bio" target="_new">Lex Berman</a>',
+            maxZoom: 19, opacity: 0.8}),
 
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-        maxZoom: 16, opacity: 0.6})
-    ;  
+        maxZoom: 16, opacity: 0.6});
+    
 
- // base layer select options
+
+    // base maps for control
     var basemaps = {
-        "Terrain": esri, 
-        "Modern Map": natGeo,
+        "Gray": carto_light,
+//        "Natl Geo": natGeo,
+        "Terrain": streets
     };
+
 
 //  conventions
 //  raw data variables abbreviated in lower case:  rgn1, rgn2, art1
@@ -26,30 +35,21 @@
 
 
 // get BRONZE layer data
-var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20180808_redo.geojson';
+var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20180618.geojson';
 var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20180430.geojson';
 var region_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_bronze_20171219.geojson';
 
 // get IRON layer data
-var art_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_iron_20180723.geojson';
+var art_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_iron_20180618.geojson';
 var city_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_iron_20171222.geojson';
 var region_iron = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_iron_20171222.geojson';
 
 // get GREECE PERSIAN layer data
-var art_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_greece_20180723.geojson';
 var city_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_greece_20180430.geojson';
 var region_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_greece_20180430.geojson';
 
 // get ROMAN PARTHIAN layer data
-var art_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_roman_20180806.geojson'; 
 var city_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_roman_20180430.geojson';
-var region_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_roman_20180806.geojson';
-
-// get SASSANINAN layer data
-var art_sassanian = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_sassanian_20180806.geojson';
-// no city data for Sassanian in Spreadsheet
-var region_sassanian = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_sassanian_20180806.geojson';
-
 
 // setup layergroup items
 var ArtB = L.layerGroup();
@@ -58,14 +58,9 @@ var RegB = L.layerGroup();
 var ArtI = L.layerGroup();
 var CitI = L.layerGroup();
 var RegI = L.layerGroup();
-var ArtG = L.layerGroup();
-var RegG = L.layerGroup();
 var CitG = L.layerGroup();
-var ArtR = L.layerGroup();
-var RegR = L.layerGroup();
+var RegG = L.layerGroup();
 var CitR = L.layerGroup();
-var ArtS = L.layerGroup();
-var RegS = L.layerGroup();
 
 
 // tooltip and popup behavior
@@ -85,14 +80,6 @@ function regionG(feature, layer) {
   layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-7"}).openTooltip();
 }
 
-function regionR(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-7"}).openTooltip();
-}
-
-function regionS(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-11"}).openTooltip();
-}
-
 function cityLabelB(feature, layer) {
   layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-3", offset: [0,20]}).openTooltip();
 }
@@ -108,29 +95,21 @@ function cityLabelR(feature, layer) {
   layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-8", offset: [0,20]}).openTooltip();
 }
 
-function artGeneric(feature, layer) {
+function onEachFeature(feature, layer) {
       var check1 = "";
       if(!feature.properties.Period){check1 += ""} 
       else {check1 += "Period: " + feature.properties.Period}
       var check2 = "";
       if(!feature.properties.Culture){check2 += ""} 
       else {check2 += "<br />Culture: " + feature.properties.Culture}
-      var check5 = "";
-      if(!feature.properties.Location){check5 += ""} 
-      else {check5 += "<br />Location: " + feature.properties.Location}
       var check3 = "";
-      if(!feature.properties.Desc_text){check3 += ""} 
-      else {check3 += "<hr>" + feature.properties.Desc_text  + "<br />"}
-      var check4 = "";    
-      if(!feature.properties.Credit){check4 += ""} 
-      else {check4 += "<p><em>Image: " + feature.properties.Credit + "</em>"}
-
+      if(!feature.properties.Description){check3 += ""} 
+      else {check3 += "<hr>" + feature.properties.Description + "<br />"}
   layer.bindPopup(
     "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
-    + check5 + check3
-    + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
-    + feature.properties.Image_File + "'></a>"
-    + check4
+    + check3     
+    + "<br><img src='thumbnails/" 
+    + feature.properties.Image_File + "'>", {maxWidth: "200px"}
     );
 /*  drop mouseover for IOS ipad click to work
     layer.on('mouseover', function(e) {
@@ -139,6 +118,33 @@ function artGeneric(feature, layer) {
 });
 */
 }
+
+function artBronze(feature, layer) {
+      var check1 = "";
+      if(!feature.properties.Period){check1 += ""} 
+      else {check1 += "Period: " + feature.properties.Period}
+      var check2 = "";
+      if(!feature.properties.Culture){check2 += ""} 
+      else {check2 += "<br />Culture: " + feature.properties.Culture}
+      var check3 = "";
+      if(!feature.properties.Description){check3 += ""} 
+      else {check3 += "<hr>" + feature.properties.Description  + "<br />"}
+  layer.bindPopup(
+    "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
+    + check3     
+    + "<br><img src='thumbnails/" 
+    + feature.properties.Image_File + "'>", {maxWidth: "200px"}
+
+    );
+/*  drop mouseover for IOS ipad click to work
+    layer.on('mouseover', function(e) {
+    popup.setLatLng(e.latlng)
+    this.openPopup();
+});
+*/
+}
+
+
 
 // adding REGION objects
 $.getJSON(region_bronze, function (data) {
@@ -193,42 +199,6 @@ $.getJSON(region_greece , function (data) {
               },
               onEachFeature: regionG
             }).addTo(RegG);
-});
-
-$.getJSON(region_roman , function (data) {
-  var geojsonLayer10 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 0,
-                    fillColor: "#0000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: regionR
-            }).addTo(RegR);
-});
-
-$.getJSON(region_sassanian , function (data) {
-  var geojsonLayer10 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  label = String(feature.properties.Title)
-                  return new L.CircleMarker(latlng, {
-                    radius: 0,
-                    fillColor: "#0000ff",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: regionS
-            }).addTo(RegS);
 });
 
 // adding CITY objects
@@ -318,7 +288,7 @@ $.getJSON(art_bronze, function (data) {
                   }
                 );
               },
-              onEachFeature: artGeneric
+              onEachFeature: artBronze
             }).addTo(ArtB);
 });
 
@@ -335,57 +305,6 @@ $.getJSON(art_iron, function (data) {
                   }
                 );
               },
-              onEachFeature: artGeneric
+              onEachFeature: artBronze
             }).addTo(ArtI);
-});
-
-$.getJSON(art_greece, function (data) {
-  var geojsonLayer5 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  return new L.CircleMarker(latlng, {
-                    radius: 6,
-                    fillColor: "#0000FF",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: artGeneric
-            }).addTo(ArtG);
-});
-
-$.getJSON(art_roman, function (data) {
-  var geojsonLayer5 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  return new L.CircleMarker(latlng, {
-                    radius: 6,
-                    fillColor: "#008000",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: artGeneric
-            }).addTo(ArtR);
-});
-
-$.getJSON(art_sassanian, function (data) {
-  var geojsonLayer5 = L.geoJson(data, {
-                pointToLayer: function(feature, latlng) {
-                  return new L.CircleMarker(latlng, {
-                    radius: 6,
-                    fillColor: "#CC0033",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                  }
-                );
-              },
-              onEachFeature: artGeneric
-            }).addTo(ArtS);
 });

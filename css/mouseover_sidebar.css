@@ -8,30 +8,30 @@ html, body {
 }
 
 a.btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #cccccc;
+  background-image: -webkit-linear-gradient(top, #cccccc, #b2b2b2);
+  background-image: -moz-linear-gradient(top, #cccccc, #b2b2b2);
+  background-image: -ms-linear-gradient(top, #cccccc, #b2b2b2);
+  background-image: -o-linear-gradient(top, #cccccc, #b2b2b2);
+  background-image: linear-gradient(to bottom, #cccccc, #b2b2b2);
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
   text-shadow: 1px 1px 4px #ffffff;
   font-family: Georgia;
   color: #000000;
-  font-size: 16px;
+  font-size: 12px;
   padding: 8px 12px 8px 12px;
   text-decoration: none;
 }
 
 a.btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #e5e5e5;
+  background-image: -webkit-linear-gradient(top, #e5e5e5, #cccccc);
+  background-image: -moz-linear-gradient(top, #e5e5e5, #cccccc);
+  background-image: -ms-linear-gradient(top, #e5e5e5, #cccccc);
+  background-image: -o-linear-gradient(top, #e5e5e5, #cccccc);
+  background-image: linear-gradient(to bottom, #e5e5e5, #cccccc);
   text-decoration: none;
 }
 
@@ -97,6 +97,31 @@ a.btn:hover {
   pointer-events: auto; 
 }
 
+/* roman parthian can use greece same width */
+.float-title-greece {
+  height: 18px;
+  width: 200px;
+  position: absolute;
+  left: 300px;
+  z-index: 2;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(70, 70, 70, 1);
+  pointer-events: auto; 
+}
+
+.float-title-sass {
+  height: 18px;
+  width: 200px;
+  position: absolute;
+  left: 300px;
+  z-index: 2;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(70, 70, 70, 1);
+  pointer-events: auto; 
+}
+
 .item {
     border:1px, solid;
     padding:2px;
@@ -105,11 +130,6 @@ a.btn:hover {
 }
 .active {
     background-color:rgba(100, 100, 255, 0.9);
-}
-
-.sidebar {
-    width: 224px;
-    margin-left: 0;
 }
 
 .text-labels {
@@ -176,7 +196,7 @@ a.btn:hover {
 .label-6 {
   /* greece city */
   font-family: 'IM Fell DW Pica', serif;
-  color: #0000FF;
+  color: #0000ff;
   font-size: 150%;
   line-height: 20px;
   background-color: transparent;
@@ -188,7 +208,7 @@ a.btn:hover {
 .label-7 {
   /* greece region */
   font-family: 'IM Fell DW Pica', serif;
-  color: #0000FF;
+  color: #0000ff;
   font-size: 150%;
   line-height: 20px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -207,6 +227,41 @@ a.btn:hover {
   box-shadow: none;
   cursor: inherit;
 }
+
+.label-9 {
+  /* roman region */
+  font-family: 'IM Fell DW Pica', serif;
+  color: #008000;
+  font-size: 150%;
+  line-height: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color:rgba(255, 255, 255, 0.2);
+  cursor: inherit;
+}
+
+.label-10 {
+  /* sassanian city */
+  font-family: 'IM Fell DW Pica', serif;
+  color: #CC0033;
+  font-size: 150%;
+  line-height: 20px;
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
+  cursor: inherit;
+}
+
+.label-11 {
+  /* sassanian region */
+  font-family: 'IM Fell DW Pica', serif;
+  color: #CC0033;
+  font-size: 150%;
+  line-height: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color:rgba(255, 255, 255, 0.2);
+  cursor: inherit;
+}
+
 .textLabelclass{
   white-space:nowrap;
   font-weight: 300;
@@ -215,10 +270,17 @@ a.btn:hover {
   color: yellow;
 }
 
+/* sidebar content, note widths */
+
+.sidebar {
+    width: 218px;
+    margin-left: 0;
+}
+
 #header-text {
 position:relative; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
-width: 224px;
+width: 218px;
 float: left;
 height: auto;
 margin-bottom: 10px; /*allow for footer*/
@@ -226,10 +288,11 @@ padding: 8px;
 background: #000;
 color: yellow;
 }
+
 #museum {
 position:absolute; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
-width: 224px;
+width: 218px;
 height: 20px;
 top: 34px;
 bottom: 0;
@@ -255,11 +318,16 @@ right: 8px;
 margin-top: 25px; /*allow for footer*/
 /* background: #d5cdf3; for testing only, remove when done*/
 float: left;
-padding: 8px; 
+padding: 16px; 
 border-style: solid;
 border-width: 1px;
 border-color: #ffe4c4;
 }
+
+#description img {
+vertical-align: middle;
+}
+
 #footer-text {
 position:absolute; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
@@ -276,6 +344,7 @@ border-style: solid;
 border-width: 1px;
 border-color: #051094;
 font-size: 9px;
+text-align: center;
 }
 
 

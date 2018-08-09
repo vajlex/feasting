@@ -59,7 +59,7 @@ function onEachFeature(feature, layer) {
       if(!feature.properties.Description){check3 += ""} 
       else {check3 += "<hr>" + feature.properties.Description + "<br />"}
   layer.bindPopup(
-    "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
+    "<strong><font size=+1>" + feature.properties.Title + "</font></strong><hr>" + check1 + check2
     + check3     
     + "<br><img src='thumbnails/" 
     + feature.properties.Image_File + "'>", {maxWidth: "200px"}
@@ -91,7 +91,7 @@ function artRoman(feature, layer) {
       else {check4 += "<p><em>Image: " + feature.properties.Credit + "</em>"}
 
   layer.bindPopup(
-    "<strong>" + feature.properties.Title + "</strong><hr>" + check1 + check2
+    "<strong><font size=+1>" + feature.properties.Title + "</font></strong><hr>" + check1 + check2
     + check5 + check3
     + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
     + feature.properties.Image_File + "'></a>"

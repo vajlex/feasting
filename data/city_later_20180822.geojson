@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "city_later_20180822",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Feature_ID": 1, "Feature_Type": "City", "Title": "Rome", "Location Name": "Rome", "Latitude": 41.9, "Longtitude": 12.5 }, "geometry": { "type": "Point", "coordinates": [ 12.5, 41.9 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 334, "Feature_Type": "City", "Title": "Heideck", "Location Name": "Heideck", "Latitude": 49.116667, "Longtitude": 11.116667 }, "geometry": { "type": "Point", "coordinates": [ 11.116667, 49.116667 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 422, "Feature_Type": "City", "Title": "Cologne", "Location Name": "Cologne", "Latitude": 50.936389, "Longtitude": 6.952778 }, "geometry": { "type": "Point", "coordinates": [ 6.952778, 50.936389 ] } }
+]
+}

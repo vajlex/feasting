@@ -1,12 +1,13 @@
 /*
  * Custom configurations for Museum Feasting maps.
+ * Later Periods Map
  * Lex Berman, 2017-2018, www.dbr.nu
  */
-
+ 
  //adding base layers
     var 
         esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; ESRI.  &nbsp;  Webmap code: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
+        attribution: 'Tiles &copy; ESRI. &nbsp;  Webmap code: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
         maxZoom: 16, opacity: 0.8}),
 
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -25,44 +26,42 @@
 //  layer group items with single letter caps:  R1, R2, A1
 
 
-// get BRONZE layer data
-var art_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_bronze_20180822.geojson';
-var city_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_bronze_20180430.geojson';
-var region_bronze = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_bronze_20180822.geojson';
+// get LATER layer data
+var art_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_later_20180822.geojson';
+var city_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_later_20180822.geojson';
+var region_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_later_20180822.geojson';
 
 // setup layergroup items
-var ArtB = L.layerGroup();
-var RegB = L.layerGroup();
-var CitB = L.layerGroup();
+var ArtL = L.layerGroup();
+var RegL = L.layerGroup();
+var CitL = L.layerGroup();
 
 // tooltip and popup behavior
 var popup = L.popup();  
 
 
-function regionB(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-2"}).openTooltip();
+function regionL(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-4"}).openTooltip();
 }
 
-function cityLabelB(feature, layer) {
-  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-3", offset: [0,20]}).openTooltip();
+
+function cityLabelL(feature, layer) {
+  layer.bindTooltip(label, {permanent: true, direction: "center", className: "label-12", offset: [0,20]}).openTooltip();
 }
 
 function onEachFeature(feature, layer) {
       var check1 = "";
       if(!feature.properties.Period){check1 += ""} 
       else {check1 += "Period: " + feature.properties.Period}
-
       var check2 = "";
       if(!feature.properties.Culture){check2 += ""} 
       else {check2 += "<br />Culture: " + feature.properties.Culture}
-
       var check3 = "";
-      if(!feature.properties.Description){check3 += ""} 
-      else {check3 += "<hr>" + feature.properties.Description + "<br />"}
-
+      if(!feature.properties.Desc_text){check3 += ""} 
+      else {check3 += "<hr>" + feature.properties.Desc_text + "<br />"}
   layer.bindPopup(
-    "<strong><font size=+1>" + feature.properties.Title + "</font></strong><hr>" + check1 + check2
-    + check3
+    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check1 + check2
+    + check3     
     + "<br><img src='thumbnails/" 
     + feature.properties.Image_File + "'>", {maxWidth: "200px"}
     );
@@ -74,7 +73,7 @@ function onEachFeature(feature, layer) {
 */
 }
 
-function artBronze(feature, layer) {
+function artLater(feature, layer) {
       var check1 = "";
       if(!feature.properties.Period){check1 += ""} 
       else {check1 += "Period: " + feature.properties.Period}
@@ -104,15 +103,14 @@ function artBronze(feature, layer) {
 }
 
 
-
 // adding REGION objects
-$.getJSON(region_bronze, function (data) {
-  var geojsonLayer2 = L.geoJson(data, {
+$.getJSON(region_later , function (data) {
+  var geojsonLayer10 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
                   label = String(feature.properties.Title)
                   return new L.CircleMarker(latlng, {
                     radius: 0,
-                    fillColor: "#000ff",
+                    fillColor: "#0000ff",
                     color: "#000",
                     weight: 1,
                     opacity: 1,
@@ -120,13 +118,13 @@ $.getJSON(region_bronze, function (data) {
                   }
                 );
               },
-              onEachFeature: regionB
-            }).addTo(RegB);
+              onEachFeature: regionL
+            }).addTo(RegL);
 });
 
 // adding CITY objects
-$.getJSON(city_bronze, function (data) {
-  var geojsonLayer3 = L.geoJson(data, {
+$.getJSON(city_later, function (data) {
+  var geojsonLayer7 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
                   label = String(feature.properties.Title)
                   return new L.CircleMarker(latlng, {
@@ -139,18 +137,18 @@ $.getJSON(city_bronze, function (data) {
                   }
                 );
               },
-              onEachFeature: cityLabelB
-            }).addTo(CitB);
+              onEachFeature: cityLabelL
+            }).addTo(CitL);
 });
 
 
 // adding Artifact Point Objects
-$.getJSON(art_bronze, function (data) {
-  var geojsonLayer5 = L.geoJson(data, {
+$.getJSON(art_later, function (data) {
+  var geojsonLayer6 = L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
                   return new L.CircleMarker(latlng, {
                     radius: 6,
-                    fillColor: "#ff7800",
+                    fillColor: "#FFFFFF",
                     color: "#000",
                     weight: 1,
                     opacity: 1,
@@ -158,6 +156,13 @@ $.getJSON(art_bronze, function (data) {
                   }
                 );
               },
-              onEachFeature: artBronze
-            }).addTo(ArtB);
+              onEachFeature: artLater
+            }).addTo(ArtL);
+});
+
+
+//  Label Collision see:  https://github.com/yakitoritabetai/Leaflet.LabelTextCollision
+
+var labelTextCollision = new L.LabelTextCollision({
+  collisionFlg : true
 });

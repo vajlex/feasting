@@ -7,7 +7,7 @@
  //adding base layers
     var 
         esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; ESRI.  &nbsp;  Map design: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
+        attribution: 'Tiles &copy; ESRI.  &nbsp;  Webmap code: <a href="https://www.dbr.nu" target="_blank">Lex Berman</a>',
         maxZoom: 16, opacity: 0.8}),
 
         natGeo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -27,9 +27,9 @@
 
 
 // get GREECE PERSIAN layer data
-var art_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_greece_20180723.geojson';
+var art_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_greece_20180822.geojson';
 var city_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_greece_20180430.geojson';
-var region_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_greece_20180430.geojson';
+var region_greece = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_greece_20180822.geojson';
 
 // setup layergroup items
 var ArtG = L.layerGroup();
@@ -56,10 +56,10 @@ function onEachFeature(feature, layer) {
       if(!feature.properties.Culture){check2 += ""} 
       else {check2 += "<br />Culture: " + feature.properties.Culture}
       var check3 = "";
-      if(!feature.properties.Description){check3 += ""} 
-      else {check3 += "<hr>" + feature.properties.Description + "<br />"}
+      if(!feature.properties.Desc_text){check3 += ""} 
+      else {check3 += "<hr>" + feature.properties.Desc_text + "<br />"}
   layer.bindPopup(
-    "<strong><font size=+1>" + feature.properties.Title + "</font></strong><hr>" + check1 + check2
+    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check1 + check2
     + check3     
     + "<br><img src='thumbnails/" 
     + feature.properties.Image_File + "'>", {maxWidth: "200px"}
@@ -91,7 +91,7 @@ function artGreece(feature, layer) {
       else {check4 += "<p><em>Image: " + feature.properties.Credit + "</em>"}
 
   layer.bindPopup(
-    "<strong><font size=+1>" + feature.properties.Title + "</font></strong><hr>" + check1 + check2
+    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check1 + check2
     + check5 + check3
     + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
     + feature.properties.Image_File + "'></a>"

@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "region_later_20180822",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Feature_ID": 349, "Feature_Type": "Region", "Title": "Cameroon Grass Fields", "Location Name": "Cameroon Grass Fields", "Latitude": 5.71667, "Longtitude": 10.916667 }, "geometry": { "type": "Point", "coordinates": [ 10.916667, 5.71667 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 428, "Feature_Type": "Region", "Title": "Georgia", "Location Name": "Georgia", "Latitude": 42.0, "Longtitude": 43.5 }, "geometry": { "type": "Point", "coordinates": [ 43.5, 42.0 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 433, "Feature_Type": "Region", "Title": "Peru", "Location Name": "Peru", "Latitude": -9.18997, "Longtitude": -75.01515 }, "geometry": { "type": "Point", "coordinates": [ -75.01515, -9.18997 ] } },
+{ "type": "Feature", "properties": { "Feature_ID": 434, "Feature_Type": "Region", "Title": "Germany", "Location Name": "Germany", "Latitude": 51.16569, "Longtitude": 10.45153 }, "geometry": { "type": "Point", "coordinates": [ 10.45153, 51.16569 ] } }
+]
+}

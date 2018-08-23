@@ -27,7 +27,7 @@
 
 
 // get ROMAN PARTHIAN layer data
-var art_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_roman_20180822_B.geojson'; 
+var art_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_roman_20180822.geojson'; 
 var city_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_roman_20180430.geojson';
 var region_roman = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_roman_20180822.geojson';
 
@@ -85,14 +85,13 @@ function artRoman(feature, layer) {
       else {check5 += "<br />Location: " + feature.properties.Location}
       var check3 = "";
       if(!feature.properties.Desc_text){check3 += ""} 
-      else {check3 += "<hr>" + feature.properties.Desc_text  + "<br />"}
+      else {check3 += feature.properties.Desc_text  + "<br />"}
       var check4 = "";    
       if(!feature.properties.Credit){check4 += ""} 
       else {check4 += "<p><em>Image: " + feature.properties.Credit + "</em>"}
 
   layer.bindPopup(
-    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check1 + check2
-    + check5 + check3
+    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check3
     + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
     + feature.properties.Image_File + "'></a>"
     + check4

@@ -27,7 +27,7 @@
 
 
 // get LATER layer data
-var art_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_later_20180822.geojson';
+var art_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/art_later_20180823.geojson';
 var city_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/city_later_20180822.geojson';
 var region_later = 'https://raw.githubusercontent.com/vajlex/feasting/master/data/region_later_20180822.geojson';
 
@@ -82,14 +82,13 @@ function artLater(feature, layer) {
       else {check2 += "<br />Culture: " + feature.properties.Culture}
       var check3 = "";
       if(!feature.properties.Desc_text){check3 += ""} 
-      else {check3 += "<hr>" + feature.properties.Desc_text  + "<br />"}
+      else {check3 += feature.properties.Desc_text  + "<br />"}
       var check4 = "";    
       if(!feature.properties.Credit){check4 += ""} 
       else {check4 += "<p><em>Image: " + feature.properties.Credit + "</em>"}
 
   layer.bindPopup(
-    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check1 + check2
-    + check3
+    "<strong><font size=+1>" + feature.properties.Desc_title + "</font></strong><hr>" + check3
     + "<br><a href='800px/" + feature.properties.Image_File +  "' target='_blank' title='get larger image'><img src='thumbnails/" 
     + feature.properties.Image_File + "'></a>"
     + check4

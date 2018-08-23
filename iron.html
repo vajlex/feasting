@@ -36,27 +36,31 @@
  <div id="museum">HARVARD ART MUSEUMS</div>
  <div id="description">
   Select a map to view:<p>
-  <a href="index.html" class="btn">HOME</a>
+  <a href="index.html" class="btn">Home</a>
   <br><br>
-  <a href="bronze.html" class="btn">BRONZE AGE</a>
+  <a href="bronze.html" class="btn">Bronze Age</a>
   <br><br>
-  <a href="iron.html" class="btn">IRON AGE</a>
+  <a href="iron.html" class="btn">Iron Age</a>
   <br><br>
-  <a href="greece.html" class="btn">GREECE - PERSIAN AGE</a>
+  <a href="greece.html" class="btn">Greek and Achaemenid</a>
   <br><br>
-  <a href="roman.html" class="btn">ROMAN - PARTHIAN AGE</a>
+  <a href="roman.html" class="btn">Roman and Parthian</a>
   <br><br>
-  <a href="sassanian.html" class="btn">SASSANIAN AGE</a> 
+  <a href="sassanian.html" class="btn">Sasanian and East Asian</a>
+  <br><br>
+  <a href="later_periods.html" class="btn">Later Periods</a>
  </div>
   <div id="description">
   Legend:<p>
   <img src="img/legend_color_iron.png"> Iron
+  <br><img src="img/cluster_hi.png"> Cluster of Points (high density)
+  <br><img src="img/cluster_lo.png"> Cluster of Points (low density)
  </div>
  <div id="footer-text">(c) 2018  Harvard Art Musuems</div>
 </div>
 
 <div>
-  <div class="float-title-iron">IRON AGE</div>
+  <div class="float-title-iron">The Iron Age (1200-500 BCE)</div>
   <div id="mapdiv"></div>
 </div>
 <script>
@@ -67,7 +71,7 @@
 // create a map instance
 
   var map2 = L.map('mapdiv', {
-    center: [35, 38],
+    center: [35, 32],
     zoom: 5
   });
    map2.addLayer(esri);

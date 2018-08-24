@@ -2,14 +2,14 @@
 "Neo-
 Assyrian, 8th–7th century
 BCE. Terracotta, 13.8 × 11.4 ×
-11.1 cm (5 7/16 × 4 1 /2 × 4 3/8 in.).
+11.1 cm (5 7/16 × 4 1/2 × 4 3/8 in.).
 From House 15 at Ashur (Qalʿat
 Sherqat, Iraq). Vorderasiatisches
 Museum, Staatliche Museen
 zu Berlin, VA 8831."
 "Levantine, 14th–13th century
 BCE. Faience, length: 11.3 cm
-(4 7/ 16 in.); diameter: 7.4 cm
+(4 7/16 in.); diameter: 7.4 cm
 (2 15/16 in.). From Tomb 86 at
 Enkomi (Cyprus). The British
 Museum, London, Excavated by
@@ -17,7 +17,7 @@ the Turner Bequest Excavations,
 1897,0401.1212."
 "Iranian, 6th century
 BCE. Gold, height: 17 cm
-(6 1 1 / 16 in.); weight: 966.6 g.
+(6 1 1/16 in.); weight: 966.6 g.
 Metropolitan Museum of Art,
 New York, Fletcher Fund, 1954,
 54.3.3."
@@ -32,13 +32,13 @@ Adolph D. and Wilkins C.
 Williams Fund, 79.100."
 "Etruscan,
 550–530 BCE. Terracotta, bucchero,
-height: 18.4 cm (7 1 /4 in.);
-length: 13. 2 cm (5 3 / 1 6 in.).
+height: 18.4 cm (7 1/4 in.);
+length: 13. 2 cm (5 3/16 in.).
 Museum of Fine Arts, Boston,
 Gift of H. P. Kidder, 80.580."
 "Nubian, 1700–1550 BCE.
 Terracotta, height: 20.5 cm
-(8 1 / 16 in.); length: 26. 5 cm
+(8 1/16 in.); length: 26.5 cm
 (10 7/16 in.). From Tomb K 330 in
 the South Cemetery at Kerma,
 Nubia (Sudan). Museum of Fine
@@ -47,7 +47,7 @@ Boston Museum of Fine
 Arts Expedition, 21.11804."
 "Cypriot, 750–600 BCE. Painted terracotta
 Bichrome ware, height:
-21 cm (8 1 /4 in.). From Cyprus.
+21 cm (8 1/4 in.). From Cyprus.
 Metropolitan Museum of Art,
 New York, The Cesnola Collection,
 Purchased by subscription,
@@ -55,27 +55,27 @@ Purchased by subscription,
 "Etruscan,
 550–500 BCE. Terracotta,
 bucchero, height: 29.1 cm
-(11 7 / 1 6 in.). Met ropol i tan
-Museum of Ar t, New York,
+(11 7/16 in.). Metropoli tan
+Museum of Art, New York,
 Rogers Fund, 1918, 18.145.25."
 "Attributed to
 Douris, Greek, Attic, early 5th
 century BCE. Terracotta, redfigure
 technique, height: 14.4 cm
-(5 11 / 16 in.); diameter: 8.7 cm
+(5 11/16 in.); diameter: 8.7 cm
 (3 7/16 in.). Musée du Louvre, Paris,
 H 65 (MNB 1294)."
 "Iranian, 9th–8th century
 BCE. Painted terracotta,
-height: 18. 5 cm (7 5 / 1 6 in.);
+height: 18.5 cm (7 5/16 in.);
 length: 33 cm (13 in.); diameter
-(mouth): 18 cm (7 1 /16 in.). Harvard Art Museums/Arthur M.
+(mouth): 18 cm (7 1/16 in.). Harvard Art Museums/Arthur M.
 Sackler Museum, Anonymous gift,
 1937.12"
 "Achaemenid, c. 480 BCE.
 Silver, partially gilded, height:
-27 cm (10 5 / 8 in.); diameter
-(rim): 13.4 cm (5 1 /4 in.); weight:
+27 cm (10 5/8 in.); diameter
+(rim): 13.4 cm (5 1/4 in.); weight:
 1,344 g. From the Kukova
 Mogila at Duvanli (Bulgaria).
 National Archaeological Institute
@@ -85,20 +85,20 @@ with Museum, Sofia, Bulgaria,
 century. Fritware under blue
 glaze, with molded, incised,
 and applied decoration, height:
-25 cm (9 1 3 / 16 in.); diameter:
+25 cm (9 13/16 in.); diameter:
 16.2 cm (6 3/8 in.). Harvard Art
-Museums / Arthur M. Sackler
+Museums/Arthur M. Sackler
 Museum, Gift of Ann B. Goodman
-and Ar thur B. Pardee,
+and Arthur B. Pardee,
 2003.165"
-"Greek, Boeotian, 575–550 BCE. Terracot ta, black figure technique, height:
+"Greek, Boeotian, 575–550 BCE. Terracotta, black figure technique, height:
 19.2 cm (7 9/16 in.); length: 25 cm
 (9 13/16 in.); diameter: 11.9 cm
-(4 11 /16 in.). Antikensammlung,
+(4 11/16 in.). Antikensammlung,
 Staatliche Museen zu Berlin,
 V.I. 3391."
 "Etruscan, 550–530 BCE. Terracotta, bucchero, height:
-16.6 cm (6 9/ 1 6 in.); length:
+16.6 cm (6 9/16 in.); length:
 20.1 cm (7 15/16 in.); diameter:
 10.7 cm (4 3/16 in.). From Tomb
 K 136, Crocifisso del Tufo necropolis,
@@ -107,8 +107,8 @@ Museo Archeologico Nazionale
 di Orvieto, Italy, B 619, F 271,
 C 33, mag. 103, el. gen. 1326."
 "Iranian, 1350–1000 BCE.
-Terracotta, height: 2 6 cm
-(10 1 /4 in.); length: 39 cm
+Terracotta, height: 26 cm
+(10 1/4 in.); length: 39 cm
 (15 3/8 in.). Ashmolean Museum
 of Art and Archaeology, University
 of Oxford, AN1964.347."
@@ -120,7 +120,7 @@ Painted terracotta, height:
 Kanesh (Turkey). Musée du
 Louvre, Paris, AM 1517."
 "Post-Palatial (Late
-Minoan IIIA:2), 14th– 13th century
+Minoan IIIA:2), 14th–13th century
 BCE. Painted terracotta,
 height: 18.8 cm (6 5/8 in.); length:
 16.4 cm (6 7/16 in.). From Karpathos
@@ -156,8 +156,7 @@ Mrs. Schuyler Van Rensselaer,
 probably 5th century BCE. Cast
 bronze with gray-green patina,
 20.5 × 17 × 30.8 cm (8 1/16 × 6 11/16 ×
-12 1/8 in.). Harvard Art Museums /
-Arthur M. Sackler Museum,
+12 1/8 in.). Harvard Art Museums/Arthur M. Sackler Museum,
 Anonymous gift, 1944.57.4."
 "Moche (Virú
 or Chicama Valley, Peru), 350–850 CE. Painted terracotta, 27 ×
@@ -171,7 +170,7 @@ Museum, 1916, 16-62-30/F727."
 (Turkey). The British Museum,
 London, 1848,1020.97– 9"
 "Achaemenid, 5th–4th
-century bce
+century BCE.
 Silver, partially gilded
 Height: 23 cm (9 1/16 in.);
 diameter: 13.4 cm
@@ -232,9 +231,9 @@ Museum, Vienna, ANSA IV 910."
 to the potter Sotades and in the
 manner of the Sotades Painter,
 Greek, Attic, c. 460 BCE. Terracotta
-with polychrome and redfigure
+with polychrome and red-figure
 decoration, 23 × 23 cm
-(9 1 /16 × 9 1 /16 in.). From Capua
+(9 1/16 × 9 1/16 in.). From Capua
 (Italy). Museum of Fine Arts,
 Boston, Henry Lillie Pierce Fund,
 98.881."
@@ -263,7 +262,7 @@ Gift of Nelson A. Rockefeller,
 "Greek,
 Attic, 520–500 BCE. Terracotta,
 black-figure technique, height:
-21.6 cm (8 ½ in.); diameter:
+21.6 cm (8 1/2 in.); diameter:
 13.7 cm (5 3/8 in.). The British
 Museum, London, 1876,0328.5
 (B378)."
@@ -286,12 +285,11 @@ provided by the S. & A.P. Fund,
 Attic, c. 530 BCE. Terracotta,
 black-figure technique, height:
 11.7 cm (4 5/8 in.); diameter: 23 cm
-(9 1/16 in.). Harvard Art Museums/
-Arthur M. Sackler Museum,
+(9 1/16 in.). Harvard Art Museums/Arthur M. Sackler Museum,
 Bequest of Joseph C. Hoppin,
 1925.30.19."
 "Greek, Attic,
-490–470 BCE. Terracotta, redfigure
+490–470 BCE. Terracotta, red-figure
 technique, height: 24.1 cm
 (9 1/2 in.); diameter: 12.7 cm (5 in.).
 From Capua (Italy). The British
@@ -300,7 +298,7 @@ Museum, London, 1873,0820.274
 "Attributed
 to the Syriskos Painter,
 Greek, Attic, 480–470 BCE.
-Terracotta, red-f igure technique,
+Terracotta, red-figure technique,
 height: 21.5 cm (8 7/16 in.);
 diameter (rim): 11.4 cm (4 1/2 in.).
 From Capua (Italy). The British
@@ -308,7 +306,7 @@ Museum, London, 1873,0820.272
 (E795)."
 "Sir Lawrence Alma-Tadema,
 British (born Netherlands),
-1836– 1912. 1887. Oil on canvas, 122.5 ×
+1836–1912. 1887. Oil on canvas, 122.5 ×
 184.2 cm (48 1/4 × 72 1/2 in.). Clark
 Art Institute, Williamstown,
 Massachusetts, 1978.12."
@@ -329,17 +327,17 @@ Museum, Sofia, Bulgaria, 50457."
 "Name vase of the Painter
 of the Oxford Boar Head, Greek,
 South Italian, Apulian, 4th
-century BCE. Terracotta, redfigure
+century BCE. Terracotta, red-figure
 technique, height: 18 cm
-(7 1 /16 in.); diameter: 10.5 cm
+(7 1/16 in.); diameter: 10.5 cm
 (4 1/8 in.). Ashmolean Museum of
 Art and Archaeology, University
 of Oxford, AN1885.638."
 "Greek, South Italian, Apulian,
-second half 4th century
+second half of the 4th century
 BCE. Terracotta, height: 19.2 cm
 (7 9/16 in.); diameter (rim): 8.9 cm
-(31 /2 in.). From Ruvo (Italy).
+(3 1/2 in.). From Ruvo (Italy).
 Museum of Fine Arts, Boston,
 Henry Lillie Pierce Fund, 00.361."
 "Thomas Pitts I, 1771. Silver with traces of
@@ -373,7 +371,7 @@ Museum, Bequest of Joseph C.
 Hoppin, 1925.30.46."
 "Greek, 4th–3rd century BCE.
 Marble, 25 × 40 × 3 cm (9 13/16 ×
-15 3/4 × 1 3/ 16 in.). Ashmolean
+15 3/4 × 1 3/16 in.). Ashmolean
 Museum of Art and Archaeology,
 University of Oxford,
 ANMichaelis.145."
@@ -406,32 +404,32 @@ Fund, 1919, 19.192.50."
 "Roman,
 1st century BCE–1st century CE.
 Glazed terracotta, 12 × 9 cm
-(4 3/4 × 3 9/ 16 in.). Walters Art
+(4 3/4 × 3 9/16 in.). Walters Art
 Museum, Baltimore, Acquired
 by Henry Walters, 48.127."
 "Roman, 1st–2nd century
 CE. Glass, height: 16.5 cm
-(6 ½ in.); diameter: 11.4 cm
-(4 ½ in.). The British Museum,
+(6 1/2 in.); diameter: 11.4 cm
+(4 1/2 in.). The British Museum,
 London, Bequest of James Woodhouse,
 1868,0110.510."
 "Langobardic, 6th–7th
 century CE. Light green glass
 with red and white decoration,
-length: 21 cm (8 ¼ in.); height:
-14.6 cm (5 ¾ in.); diameter: 7 cm
+length: 21 cm (8 1/4 in.); height:
+14.6 cm (5 3/4 in.); diameter: 7 cm
 (2 3/4 in.). Metropolitan Museum of
 Art, New York, Edward C. Moore
 Collection, Bequest of Edward C.
 Moore, 1891, 91.1.1407."
 "Korean, Silla
 Kingdom, Three Kingdoms
-Period, 5th– 6th century CE.
+Period, 5th-6th century CE.
 Gray stoneware with splashes of
 ash glaze, length (horn): 34.2 cm
 (13 7/16 in.); diameter (horn):
 12.5 cm (4 15/16 in.); height (stand):
-25.7 cm (10 1 /8 in.); diameter
+25.7 cm (10 1/8 in.); diameter
 (stand): 17.2 cm (6 3/4 in.). Harvard
 Art Museums/Arthur M. Sackler
 Museum, Partial gift of Maria C.
@@ -488,7 +486,7 @@ D.C., Gift of Arthur M. Sackler,
 S1987.33."
 "Sasanian, 7th century
 CE. Silver, partially gilded,
-height: 5.7 cm (2 ¼ in.); diameter:
+height: 5.7 cm (2 1/4 in.); diameter:
 14.3 cm (5 5/8 in.); weight: 481 g.
 Freer Gallery of Art and Arthur
 M. Sackler Gallery, Smithsonian
@@ -520,7 +518,7 @@ Museum, London, E37452."
 "Attributed
 to the Osborne House Painter,
 East Greek, probably Miletus,
-550–530 BCE. Terracotta, blackfigure
+550–530 BCE. Terracotta, black-figure
 technique, height: 17.3 cm
 (6 13/16 in.). Museum of Fine Arts,
 Boston, Henry Lillie Pierce Fund,
@@ -599,3 +597,23 @@ Jean-Claude Richard, Abbé de Saint-Non, French, 1727–1791, after Hubert Rober
 (43 3/16 in.). From Panjikent (Tajikistan).
 State Hermitage Museum,
 St. Petersburg, CA–16235."
+
+
+
+"Achaemenid,
+c. 522–486 BCE."
+
+"Sumerian (Late Uruk), end of 4th
+millennium BCE. Alabaster. From
+Uruk (Iraq). Iraq Museum, Baghdad,
+IM 19606."
+"Neo-
+Assyrian, late 8th century
+BCE. From Room 2 of Sargon
+II’s palace at Dur-Sharrukin
+(Khorsabad, I raq). (Image
+after Botta and Flandin, Monument
+de Ninive, pl. 76. Harry
+Elkins Widener Memorial Library,
+Harvard University, AH
+3013.35 PF v.1.)"

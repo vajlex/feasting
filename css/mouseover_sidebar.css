@@ -132,9 +132,34 @@ a.btn:hover {
   pointer-events: auto; 
 }
 
+/* roman parthian can use greece same width */
+.float-title-roman {
+  height: 18px;
+  width: 360px;
+  position: absolute;
+  left: 300px;
+  z-index: 2;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(70, 70, 70, 1);
+  pointer-events: auto; 
+}
+
 .float-title-sass {
   height: 18px;
   width: 360px;
+  position: absolute;
+  left: 300px;
+  z-index: 2;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(70, 70, 70, 1);
+  pointer-events: auto; 
+}
+
+.float-title-later {
+  height: 18px;
+  width: 210px;
   position: absolute;
   left: 300px;
   z-index: 2;
@@ -316,7 +341,21 @@ a.btn:hover {
 #header-text {
 position:relative; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
-width: 218px;
+width: 210px;
+min-height: 44px;
+float: left;
+height: auto;
+margin-bottom: 10px; /*allow for footer*/
+padding: 8px; 
+background: #000;
+color: yellow;
+}
+
+#header-broken {
+position:relative; /*absolute positioning requires left or right & top or bottom with width & height*/
+display: block;
+width: 400px;
+min-height: 48px;
 float: left;
 height: auto;
 margin-bottom: 10px; /*allow for footer*/
@@ -328,9 +367,9 @@ color: yellow;
 #museum {
 position:absolute; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
-width: 218px;
+width: 210px;
 height: 20px;
-top: 34px;
+top: 50px;
 bottom: 0;
 left: 0;  
 right: 0;  
@@ -346,23 +385,42 @@ border-color: #051094;
 #description {
 position:relative; /*absolute positioning requires left or right & top or bottom with width & height*/
 display: block;
-max-width: 224px;
+max-width: 208px;
 height: auto;
 top: 4px;
 left: 8px;  
 right: 8px;  
-margin-top: 25px; /*allow for footer*/
+margin-top: 15px; /*allow for footer*/
 /* background: #d5cdf3; for testing only, remove when done*/
 float: left;
-padding: 16px; 
+padding: 12px; 
 border-style: solid;
 border-width: 1px;
 border-color: #ffe4c4;
-font-size: 13px;
-line-height: 140%
+font-size: 12px;
+line-height: 145%
 }
 
-#description img {
+#description-legend {
+position:relative; /*absolute positioning requires left or right & top or bottom with width & height*/
+display: block;
+max-width: 208px;
+height: auto;
+top: 4px;
+left: 8px;  
+right: 8px;  
+margin-top: 8px; /*allow for footer*/
+/* background: #d5cdf3; for testing only, remove when done*/
+float: left;
+padding: 10px; 
+border-style: solid;
+border-width: 1px;
+border-color: #ffe4c4;
+font-size: 11px;
+line-height: 100%
+}
+
+#description-legend img {
 vertical-align: middle;
 }
 
